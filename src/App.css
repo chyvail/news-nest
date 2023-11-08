@@ -64,6 +64,10 @@ h1 {
   width: 100%;
 }
 
+.nav-links {
+  text-transform: capitalize;
+}
+
 ul {
   margin-bottom: 0;
   font-size: 13px;
