@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function Navbar() {
+export default function Navbar({ api, clientKey }) {
   // State to check mobile view
   const [isMobile, setIsMobile] = useState(false);
 
@@ -13,7 +13,9 @@ export default function Navbar() {
   });
 
   const handleFetchNews = (category) => {
-    console.log("clicked ", category)
+    fetch(`${api}${clientKey}&categories=${category}`)
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
 
   // Render Links
@@ -31,7 +33,9 @@ export default function Navbar() {
       key={link}
       id={link}
       className={isMobile ? "nav-links" : " ul-padding nav-links"}
-      onClick={()=>{handleFetchNews(link)}}
+      onClick={() => {
+        handleFetchNews(link);
+      }}
     >
       {link}
     </li>
