@@ -1,0 +1,286 @@
+/* Bootstrap Style Overides */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root {
+  --transition: all 400ms ease;
+  --container-width-lg: 95%;
+  --primary-color: #c31815;
+  --white: #fff;
+  --gray-background: #e5e5e5;
+  --black: #2a2a2a;
+  --gray-light: #7e7979;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--gray-background);
+}
+
+.containerlg {
+  width: var(--container-width-lg);
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: var(--black);
+}
+
+p {
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.nav-bar {
+  height: 50px;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+}
+
+ul {
+  margin-bottom: 0;
+  font-size: 13px;
+  padding-left: 0;
+}
+
+.ul-padding {
+  padding-left: 30px;
+}
+
+nav > div > ul > li:hover,
+#search-query {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.hamburger-button {
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 23px;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 50vh;
+  object-fit: contain;
+  object-position: 50% 50%;
+}
+
+.carousel-item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-content {
+  z-index: 1;
+}
+
+.carousel-content p {
+  font-size: 12px;
+}
+
+.carousel-caption h5,
+p {
+  color: var(--white);
+}
+
+.card {
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.06);
+}
+
+.card-text {
+  color: var(--gray-light);
+  font-size: 12px;
+}
+
+.card-img-top {
+  height: 160px;
+  object-fit: cover;
+}
+
+.card-body h6 {
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.card-author {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icons {
+  color: var(--primary-color);
+}
+
+.like i {
+  cursor: pointer;
+}
+
+hr {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.icons {
+  margin-bottom: 1rem;
+}
+
+.like,
+.bookmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.like p,
+.bookmark p {
+  color: var(--primary-color);
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.more-news {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 15px;
+  text-align: center;
+}
+
+.toast-header {
+  color: var(--primary-color);
+}
+
+.modal-footer {
+  padding: 0;
+}
+
+.modal-footer > * {
+  margin: 0;
+}
+
+.custom-form {
+  border-radius: 0;
+}
+
+.custom-button {
+  background: var(--primary-color);
+  color: var(--white);
+  border: 0;
+  border-radius: 0;
+}
+
+.custom-button:hover {
+  color: var(--white);
+  opacity: 0.9;
+}
+
+.toast-body p {
+  color: var(--black) !important;
+}
+
+footer {
+  text-align: center;
+  background: var(--white);
+  padding: 30px;
+  margin-top: 10px;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* Mobile Dropdown */
+
+.dropdown-menu.dropdown-menu-dark.show {
+  inset: 11px auto auto -11px !important;
+  border-radius: 0;
+  background: #c318158c;
+  padding: 12px;
+}
+
+.dropdown-menu.dropdown-menu-dark.show li {
+  margin-bottom: 0.25rem !important;
+}
+
+/* Medium Screens */
+@media screen and (max-width: 1024px) {
+  .custom-md-size {
+    flex: 0 0 auto !important;
+    width: 50% !important;
+  }
+}
+
+/* Small Screens */
+@media screen and (max-width: 600px) {
+  .nav-bar {
+    justify-content: end;
+  }
+
+  .search-mobile {
+    font-size: 23px;
+  }
+
+  .nav-small {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .display-none-sm {
+    display: none !important;
+  }
+
+  .featured-subtitle {
+    margin-top: 25px;
+  }
+
+  .custom-md-size {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+  }
+
+  .carousel-item img {
+    object-fit: cover;
+  }
+}
