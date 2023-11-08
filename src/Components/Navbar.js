@@ -1,6 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Navbar() {
+  // State to check mobile view
+  const [isMobile, setIsMobile] = useState(false);
+
+  const handleResize = () => {
+    window.innerWidth < 720 ? setIsMobile(true) : setIsMobile(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+  });
+
+  // Render Links
   const links = [
     "general",
     "business",
@@ -9,11 +21,17 @@ export default function Navbar() {
     "sports",
     "technology",
   ];
+
   const renderLinks = links.map((link) => (
-    <li key={link} id={link} className="ul-padding nav-links">
+    <li
+      key={link}
+      id={link}
+      className={isMobile ? "nav-links" : " ul-padding nav-links"}
+    >
       {link}
     </li>
   ));
+
   return (
     <div>
       <nav className="nav-bar">
