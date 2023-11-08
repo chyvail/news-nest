@@ -8,8 +8,10 @@ export default function Carousel({ api, clientKey }) {
     fetch(`${api}${clientKey}&categories=entertainment`)
       .then((res) => res.json())
       .then((featuredData) => setCarouselData(featuredData.data));
-  }, [api,clientKey]);
+  }, [api, clientKey]);
+
   const data = carouselData.slice(0, 3);
+
   return (
     <div
       id="carouselExampleCaptions"
@@ -39,6 +41,7 @@ export default function Carousel({ api, clientKey }) {
           aria-label="Slide 3"
         ></button>
       </div>
+
       <div className="carousel-inner">
         {data.map((carousel, index) => (
           <div
@@ -58,6 +61,7 @@ export default function Carousel({ api, clientKey }) {
           </div>
         ))}
       </div>
+
       <button
         className="carousel-control-prev"
         type="button"
@@ -67,6 +71,7 @@ export default function Carousel({ api, clientKey }) {
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Previous</span>
       </button>
+
       <button
         className="carousel-control-next"
         type="button"
