@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Navbar api={mediaStackApi} clientKey={clientKey} />
-      <Carousel />
+      <Carousel api={mediaStackApi} clientKey={clientKey} />
       <NewsStories />
       <Footer />
     </>
