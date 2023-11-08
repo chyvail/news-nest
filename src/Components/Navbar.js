@@ -12,6 +12,10 @@ export default function Navbar() {
     window.addEventListener("resize", handleResize);
   });
 
+  const handleFetchNews = (category) => {
+    console.log("clicked ", category)
+  };
+
   // Render Links
   const links = [
     "general",
@@ -27,6 +31,7 @@ export default function Navbar() {
       key={link}
       id={link}
       className={isMobile ? "nav-links" : " ul-padding nav-links"}
+      onClick={()=>{handleFetchNews(link)}}
     >
       {link}
     </li>
