@@ -1,4 +1,5 @@
 import "./App.css";
+import Banner from "./Components/Banner";
 import Carousel from "./Components/Carousel";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
@@ -11,6 +12,7 @@ function App() {
     <>
       <Navbar api={mediaStackApi} clientKey={clientKey} />
       <Carousel api={mediaStackApi} clientKey={clientKey} />
+      <Banner />
       <NewsStories />
       <Footer />
     </>
