@@ -21,7 +21,7 @@ export default function Card() {
               <h6>{news.title}</h6>
               <p class="card-text">{news.description}</p>
               <div class="card-author">
-                <p class="card-text mt-2">{news.published_at}</p>
+                <p class="card-text mt-2">{news.published_at.slice(0, 10)}</p>
                 <p class="card-text mt-2">~ {news.author}</p>
               </div>
             </div>
