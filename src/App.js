@@ -31,10 +31,10 @@ function App() {
     <NewsContext.Provider
       value={{ newsData, setNewsData, defaultImage, api, clientKey }}
     >
-      <Navbar api={api} clientKey={clientKey} />
-      <Carousel api={api} clientKey={clientKey} />
+      <Navbar />
+      <Carousel />
       <Banner />
-      <NewsStories api={api} clientKey={clientKey} />
+      <NewsStories />
       <Footer />
     </NewsContext.Provider>
   );

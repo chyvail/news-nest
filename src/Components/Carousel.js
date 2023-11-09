@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { NewsContext } from "../Contexts/NewsContext";
 
-export default function Carousel({ api, clientKey }) {
+export default function Carousel() {
   // Initialize carouselData state
   const [carouselData, setCarouselData] = useState([]);
+
+  // Context
+  const { api, clientKey } = useContext(NewsContext);
 
   useEffect(() => {
     fetch(`${api}${clientKey}&categories=entertainment`)

@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { NewsContext } from "../Contexts/NewsContext";
 
-export default function Navbar({ api, clientKey }) {
+export default function Navbar() {
   // State to check mobile view
   const [isMobile, setIsMobile] = useState(false);
+
+  // Context
+  const { api, clientKey } = useContext(NewsContext);
 
   const handleResize = () => {
     window.innerWidth < 720 ? setIsMobile(true) : setIsMobile(false);
