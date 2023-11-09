@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { NewsContext } from "../Contexts/NewsContext";
 
 export default function SearchModal() {
+  // Handle Form State
+  const [search, setSearch] = useState("");
+
+  const { setNewsData, api, clientKey } = useContext(NewsContext);
+
+  // Handle Search Event
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetch(`${api}${clientKey}&keywords=${search}`)
+      .then((res) => res.json())
+      .then((data) => setNewsData(data.data));
+    setSearch("");
+  };
   return (
     <div
       className="modal fade"
@@ -20,7 +34,7 @@ export default function SearchModal() {
             ></button>
           </div>
           <div className="modal-body">
-            <form className="was-validated">
+            <form className="was-validated" onSubmit={handleSubmit}>
               <div className="mb-3">
                 <div className="text-center mb-3">
                   <label htmlFor="search-article" className="col-form-label">
@@ -32,7 +46,9 @@ export default function SearchModal() {
                     type="text"
                     className="form-control custom-form"
                     placeholder="Search Article"
-                    id="search-article"
+                    id="search"
+                    value={search}
+                    onChange={(event) => setSearch(event.target.value)}
                     required
                   />
                   <div className="valid-feedback mt-2">Valid.</div>
