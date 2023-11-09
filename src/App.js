@@ -20,7 +20,7 @@ function App() {
     fetch(`${api}${clientKey}&keywords=Africa`)
       .then((res) => res.json())
       .then((data) => setNewsData(data.data));
-  }, []);
+  }, [api, clientKey]);
 
   return (
     <NewsContext.Provider value={{ newsData, setNewsData }}>
