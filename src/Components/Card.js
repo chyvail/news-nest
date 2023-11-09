@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { NewsContext } from '../Contexts/NewsContext'
 
 export default function Card() {
+  const {newsData} = useContext(NewsContext)
   return (
-    <div>Card</div>
+    <div>{newsData}</div>
   )
 }
