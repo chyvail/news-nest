@@ -3,8 +3,6 @@ import { NewsContext } from "../Contexts/NewsContext";
 
 export default function Card() {
   const { newsData, defaultImage, api } = useContext(NewsContext);
-
-  console.log("this is the api, ",  api)
   return (
     <>
       {newsData.map((news) => (

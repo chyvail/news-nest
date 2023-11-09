@@ -6,7 +6,7 @@ export default function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
 
   // Context
-  const { api, clientKey } = useContext(NewsContext);
+  const { api, clientKey, setNewsData } = useContext(NewsContext);
 
   const handleResize = () => {
     window.innerWidth < 720 ? setIsMobile(true) : setIsMobile(false);
@@ -19,7 +19,7 @@ export default function Navbar() {
   const handleFetchNews = (category) => {
     fetch(`${api}${clientKey}&categories=${category}`)
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setNewsData(data.data));
   };
 
   // Render Links
