@@ -2,7 +2,9 @@ import React, { useContext } from "react";
 import { NewsContext } from "../Contexts/NewsContext";
 
 export default function Card() {
-  const { newsData } = useContext(NewsContext);
+  const { newsData, defaultImage, api } = useContext(NewsContext);
+
+  console.log("this is the api, ",  api)
   return (
     <>
       {newsData.map((news) => (
@@ -13,11 +15,7 @@ export default function Card() {
           <div className="card flex-fill">
             <img
               className="card-img-top"
-              src={
-                news.image === null
-                  ? "https://img.freepik.com/free-photo/top-view-old-french-newspaper-pieces_23-2149318857.jpg?w=1800&t=st=1697118921~exp=1697119521~hmac=a7cbfebd6578b839daf35fd4850eec18106aa1152927e8f33305175ef357cdaf"
-                  : news.image
-              }
+              src={news.image === null ? defaultImage : news.image}
               alt={news.author}
             />
             <div className="card-body">

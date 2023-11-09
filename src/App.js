@@ -12,6 +12,11 @@ function App() {
   const api = process.env.REACT_APP_API_URL;
   const clientKey = process.env.REACT_APP_API_KEY;
 
+  // Default Image
+
+  const defaultImage =
+    "https://img.freepik.com/free-photo/top-view-old-french-newspaper-pieces_23-2149318857.jpg?w=1800&t=st=1697118921~exp=1697119521~hmac=a7cbfebd6578b839daf35fd4850eec18106aa1152927e8f33305175ef357cdaf";
+
   // States
   const [newsData, setNewsData] = useState([]);
 
@@ -23,7 +28,9 @@ function App() {
   }, [api, clientKey]);
 
   return (
-    <NewsContext.Provider value={{ newsData, setNewsData }}>
+    <NewsContext.Provider
+      value={{ newsData, setNewsData, defaultImage, api, clientKey }}
+    >
       <Navbar api={api} clientKey={clientKey} />
       <Carousel api={api} clientKey={clientKey} />
       <Banner />
