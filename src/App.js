@@ -6,6 +6,7 @@ import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import NewsStories from "./Components/NewsStories";
 import { NewsContext } from "./Contexts/NewsContext";
+import SearchModal from "./Components/SearchModal";
 
 function App() {
   // Key and api endpoint
@@ -36,6 +37,7 @@ function App() {
       <Banner />
       <NewsStories />
       <Footer />
+      <SearchModal />
     </NewsContext.Provider>
   );
 }

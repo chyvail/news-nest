@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { NewsContext } from "../Contexts/NewsContext";
 
 export default function Card() {
-  const { newsData, defaultImage, api } = useContext(NewsContext);
+  const { newsData, defaultImage } = useContext(NewsContext);
   return (
     <>
       {newsData.map((news) => (

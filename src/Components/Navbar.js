@@ -2,24 +2,18 @@ import React, { useContext, useEffect, useState } from "react";
 import { NewsContext } from "../Contexts/NewsContext";
 
 export default function Navbar() {
-  // State to check mobile view
-  const [isMobile, setIsMobile] = useState(false);
-
+  
   // Context
   const { api, clientKey, setNewsData } = useContext(NewsContext);
-
-  const handleResize = () => {
-    window.innerWidth < 720 ? setIsMobile(true) : setIsMobile(false);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-  });
 
   const handleFetchNews = (category) => {
     fetch(`${api}${clientKey}&categories=${category}`)
       .then((res) => res.json())
       .then((data) => setNewsData(data.data));
+  };
+
+  const handleSearch = () => {
+    console.log("This is a search icon");
   };
 
   // Render Links
@@ -36,7 +30,7 @@ export default function Navbar() {
     <li
       key={link}
       id={link}
-      className={isMobile ? "nav-links" : " ul-padding nav-links"}
+      className="ul-padding nav-links"
       onClick={() => {
         handleFetchNews(link);
       }}
@@ -45,15 +39,23 @@ export default function Navbar() {
     </li>
   ));
 
+  const renderSearch = (
+    <div className="ul-padding">
+      <i
+        id="search-query"
+        className="fa-solid fa-magnifying-glass search-mobile"
+        onClick={handleSearch}
+      ></i>
+    </div>
+  );
+
   return (
     <div>
       <nav className="nav-bar">
         <div className="containerlg">
           <ul className="display-none-sm d-flex align-items-center justify-content-center">
             {renderLinks}
-            <div className="ul-padding">
-              <i id="search-query" className="fa-solid fa-magnifying-glass"></i>
-            </div>
+            {renderSearch}
           </ul>
           <div className="nav-small d-md-none d-lg-none d-xl-none">
             <div className="hamburger-button dropdown">
@@ -69,12 +71,7 @@ export default function Navbar() {
                 {renderLinks}
               </ul>
             </div>
-            <div className="ul-padding">
-              <i
-                id="search-query"
-                className="fa-solid fa-magnifying-glass search-mobile"
-              ></i>
-            </div>
+            {renderSearch}
           </div>
         </div>
       </nav>
