@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Banner from "./Components/Banner";
-import Carousel from "./Components/Carousel";
-import Footer from "./Components/Footer";
-import Navbar from "./Components/Navbar";
-import NewsStories from "./Components/NewsStories";
 import { NewsContext } from "./Contexts/NewsContext";
-import SearchModal from "./Components/SearchModal";
+import Home from "./Pages/Home";
+import { Route, Routes } from "react-router-dom";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 
 function App() {
   // Key and api endpoint
@@ -33,11 +33,12 @@ function App() {
       value={{ newsData, setNewsData, defaultImage, api, clientKey }}
     >
       <Navbar />
-      <Carousel />
-      <Banner />
-      <NewsStories />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact-us" element={<Contact />} />
+      </Routes>
       <Footer />
-      <SearchModal />
     </NewsContext.Provider>
   );
 }
