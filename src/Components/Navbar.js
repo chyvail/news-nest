@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { NewsContext } from "../Contexts/NewsContext";
 
 export default function Navbar() {
-  
   // Context
   const { api, clientKey, setNewsData } = useContext(NewsContext);
 
@@ -10,10 +9,6 @@ export default function Navbar() {
     fetch(`${api}${clientKey}&categories=${category}`)
       .then((res) => res.json())
       .then((data) => setNewsData(data.data));
-  };
-
-  const handleSearch = () => {
-    console.log("This is a search icon");
   };
 
   // Render Links
@@ -44,7 +39,8 @@ export default function Navbar() {
       <i
         id="search-query"
         className="fa-solid fa-magnifying-glass search-mobile"
-        onClick={handleSearch}
+        data-bs-toggle="modal"
+        data-bs-target="#myModal"
       ></i>
     </div>
   );
