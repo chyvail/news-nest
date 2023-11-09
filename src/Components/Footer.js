@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer>
       Designed and built with ❤️ by{" "}
-      <a href="https://github.com/chyvail" target="_blank">
+      <a href="https://github.com/chyvail" target="_blank" rel="noreferrer">
         Josh
       </a>
     </footer>
