@@ -6,7 +6,7 @@ export default function Carousel() {
   const [carouselData, setCarouselData] = useState([]);
 
   // Context
-  const { api, clientKey } = useContext(NewsContext);
+  const { api, clientKey, defaultImage } = useContext(NewsContext);
 
   useEffect(() => {
     fetch(`${api}${clientKey}&categories=entertainment`)
@@ -54,7 +54,7 @@ export default function Carousel() {
             id="carousel-two-text"
           >
             <img
-              src={carousel.image}
+              src={carousel.image === null ? defaultImage : carousel.image}
               className="d-block w-100 img-fluid"
               alt={carousel.title}
             />
