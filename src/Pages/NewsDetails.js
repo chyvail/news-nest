@@ -54,6 +54,10 @@ export default function NewsDetails() {
       .then((data) => setComments(data.commentsList || []));
   });
 
+  if(!newsItem){
+    return null
+  }
+
   return (
     <>
       <div
@@ -96,9 +100,8 @@ export default function NewsDetails() {
           </div>
           <div className="mt-3">
             {comments.map((comment) => (
-              <div className="">
+              <div  key={comment} className="">
                 <p
-                  key={comment}
                   className="individual-comments mt-1 d-flex justify-content-between"
                 >
                   {comment}
