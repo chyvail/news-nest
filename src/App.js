@@ -40,7 +40,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact-us" element={<Contact />} />
         <Route path="/news" element={<NewsStories />} />
-        <Route path="/news/:slug" element={<NewsDetails />} />
+        <Route path="/news/:id" element={<NewsDetails />} />
       </Routes>
       <Footer />
     </NewsContext.Provider>

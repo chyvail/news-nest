@@ -220,6 +220,50 @@ hr {
   color: var(--black) !important;
 }
 
+.news-hero-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.news-hero-section {
+  height: 50vh;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.news-hero-section h5 {
+  color: #fff;
+  z-index: 100;
+}
+
+.news-details p {
+  color: black !important;
+}
+
+.news-image {
+  text-align: center;
+}
+
+.news-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+
+.original-link {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
 footer {
   text-align: center;
   background: var(--white);

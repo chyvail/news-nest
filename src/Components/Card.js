@@ -6,7 +6,7 @@ export default function Card() {
   const { newsData, defaultImage } = useContext(NewsContext);
   return (
     <>
-      {newsData.map((news) => (
+      {newsData.map((news, index) => (
         <div
           key={news.title}
           className="col-sm-3 d-flex flex-column custom-md-size"
@@ -18,7 +18,9 @@ export default function Card() {
               alt={news.author}
             />
             <div className="card-body">
-              <Link to={`/news/${news.title}`}>
+              <Link
+                to={{ pathname: `/news/${index}`, state: { newsItem: news } }}
+              >
                 <h6>{news.title}</h6>
               </Link>
               <p className="card-text">{news.description}</p>
