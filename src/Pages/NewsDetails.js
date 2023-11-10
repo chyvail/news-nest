@@ -30,6 +30,24 @@ export default function NewsDetails() {
       .then((data) => console.log(data));
   };
 
+  const handleCommentDelete = (comment) => {
+    const commentToSubmit = comment;
+    const updatedCommentsList = [
+      ...comments.filter((comment) => comment !== commentToSubmit),
+    ];
+
+    console.log(updatedCommentsList);
+    fetch(`http://localhost:8000/comments/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ commentsList: updatedCommentsList }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+
   useEffect(() => {
     fetch(`http://localhost:8000/comments/${id}`)
       .then((res) => res.json())
@@ -78,9 +96,20 @@ export default function NewsDetails() {
           </div>
           <div className="mt-3">
             {comments.map((comment) => (
-              <p key={comment} className="individual-comments mt-1">
-                {comment}
-              </p>
+              <div className="">
+                <p
+                  key={comment}
+                  className="individual-comments mt-1 d-flex justify-content-between"
+                >
+                  {comment}
+                  <i
+                    className="fa-solid fa-trash"
+                    onClick={() => {
+                      handleCommentDelete(comment);
+                    }}
+                  ></i>
+                </p>
+              </div>
             ))}
           </div>
 
