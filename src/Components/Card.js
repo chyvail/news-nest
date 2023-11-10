@@ -31,17 +31,6 @@ export default function Card() {
                 <p className="card-text mt-2">~ {news.author}</p>
               </div>
             </div>
-            <hr />
-            <div className="icons">
-              <div id="like" className="like">
-                <i id="like-icon" className="fa-regular fa-thumbs-up"></i>
-                <p className="count">0</p>
-              </div>
-              <div className="bookmark">
-                <i id="like-icon" className="fa-regular fa-bookmark"></i>
-                <p className="count">0</p>
-              </div>
-            </div>
           </div>
         </div>
       ))}

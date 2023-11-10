@@ -125,7 +125,8 @@ export default function NewsDetails() {
                 type="text"
                 className="form-control"
                 id="commentText"
-                aria-describedby="emailHelp"
+                aria-describedby="comment"
+                placeholder="Comment"
                 value={commentText}
                 onChange={(event) => setCommentText(event.target.value)}
                 required

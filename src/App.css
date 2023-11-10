@@ -144,6 +144,11 @@ p {
   justify-content: space-between;
 }
 
+.card-author p {
+  color: var(--black);
+  font-weight: 400;
+}
+
 .icons {
   color: var(--primary-color);
 }
