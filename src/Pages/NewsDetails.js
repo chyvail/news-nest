@@ -27,7 +27,7 @@ export default function NewsDetails() {
       body: JSON.stringify({ commentsList: [...comments, commentText] }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setComments(data.commentsList));
   };
 
   const handleCommentDelete = (comment) => {
@@ -45,17 +45,17 @@ export default function NewsDetails() {
       body: JSON.stringify({ commentsList: updatedCommentsList }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setComments(data.commentsList));
   };
 
   useEffect(() => {
     fetch(`http://localhost:8000/comments/${id}`)
       .then((res) => res.json())
       .then((data) => setComments(data.commentsList || []));
-  });
+  }, []);
 
-  if(!newsItem){
-    return null
+  if (!newsItem) {
+    return null;
   }
 
   return (
@@ -100,10 +100,8 @@ export default function NewsDetails() {
           </div>
           <div className="mt-3">
             {comments.map((comment) => (
-              <div  key={comment} className="">
-                <p
-                  className="individual-comments mt-1 d-flex justify-content-between"
-                >
+              <div key={comment} className="">
+                <p className="individual-comments mt-1 d-flex justify-content-between">
                   {comment}
                   <i
                     className="fa-solid fa-trash"
