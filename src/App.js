@@ -32,7 +32,7 @@ function App() {
 
   return (
     <NewsContext.Provider
-      value={{ newsData, setNewsData, defaultImage, api, clientKey }}
+      value={{ newsData, setNewsData, defaultImage, api, clientKey }} // to Avoid Prop Drilling
     >
       <Navbar />
       <Routes>

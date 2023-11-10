@@ -128,6 +128,7 @@ export default function NewsDetails() {
                 aria-describedby="emailHelp"
                 value={commentText}
                 onChange={(event) => setCommentText(event.target.value)}
+                required
               />
               <div id="textHelp" className="form-text">
                 What are you thinking about
