@@ -1,6 +1,6 @@
 # NewsNest by Joshua Omwami
 
-Welcome to News Nest, your go-to source for personalized and reliable news content. This web application is built with Bootstrap 5 for seamless design and Vanilla JavaScript for smooth user interactions.
+Welcome to News Nest, your go-to source for personalized and reliable news content. This web application is built with Bootstrap 5 for seamless design and React for smooth user interactions.
 
 ## Features
 
