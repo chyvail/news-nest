@@ -253,6 +253,19 @@ hr {
   text-align: center;
 }
 
+.news-icons {
+  padding: 0 !important;
+}
+
+.comments h5 {
+  text-decoration: underline;
+}
+
+.individual-comments {
+  background: var(--white);
+  padding: 11px;
+}
+
 .news-image img {
   width: 100%;
   height: 400px;
