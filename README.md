@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# NewsNest by Joshua Omwami
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to News Nest, your go-to source for personalized and reliable news content. This web application is built with Bootstrap 5 for seamless design and Vanilla JavaScript for smooth user interactions.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **User-Friendly Interface:** Clean and intuitive design for effortless navigation
 
-### `npm start`
+- **Responsive Layout:** Optimized for various devices, ensuring a consistent experience
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Personalized News Feed:** Tailored news articles based on individual preferences.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Category Filters:** Easily filter news by categories such as business, sports, and entertainment.
 
-### `npm test`
+- **Search Functionality:** Search for articles based on preference
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+- **Bootstrap 5:** Utilized for responsive and visually appealing UI components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Media Stack API:** To provide a powerful, scalable yet easy-to-use REST API interface delivering worldwide live and historical news data in handy JSON format.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
 
-### `npm run eject`
+```sh
+git clone https://github.com/chyvail/news-nest.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Change Directory and Run npm Install and Start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```sh
+npm install && npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Backend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The backend is simulated with json-server. Ensure you have it installed on your computer. To run it do :
 
-## Learn More
+```sh
+npm run db-start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Navigate to localhost:3000: You should see something like this 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![newsNest](https://github.com/chyvail/news-nest/assets/25295807/eb1ea401-9e33-4b0a-93a9-6db092593db3)
 
-### Code Splitting
+## Contributions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you have any suggestions, enhancements, or bug fixes, feel free to create an issue or submit a pull request.
