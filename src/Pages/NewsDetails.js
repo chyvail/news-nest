@@ -28,6 +28,7 @@ export default function NewsDetails() {
     })
       .then((res) => res.json())
       .then((data) => setComments(data.commentsList));
+      setCommentText("")
   };
 
   const handleCommentDelete = (comment) => {
