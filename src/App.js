@@ -7,6 +7,8 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import NewsStories from "./Components/NewsStories";
+import NewsDetails from "./Pages/NewsDetails";
 
 function App() {
   // Key and api endpoint
@@ -37,6 +39,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact-us" element={<Contact />} />
+        <Route path="/news" element={<NewsStories />} />
+        <Route path="/news/:slug" element={<NewsDetails />} />
       </Routes>
       <Footer />
     </NewsContext.Provider>

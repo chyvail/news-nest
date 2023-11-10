@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { NewsContext } from "../Contexts/NewsContext";
+import { Link } from "react-router-dom";
 
 export default function Card() {
   const { newsData, defaultImage } = useContext(NewsContext);
@@ -17,7 +18,9 @@ export default function Card() {
               alt={news.author}
             />
             <div className="card-body">
-              <h6>{news.title}</h6>
+              <Link to={`/news/${news.title}`}>
+                <h6>{news.title}</h6>
+              </Link>
               <p className="card-text">{news.description}</p>
               <div className="card-author">
                 <p className="card-text mt-2">
